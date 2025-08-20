@@ -2992,7 +2992,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   async function getTimeForTimeZone(timeZone) {
     try {
-      const requiredTimezoneData = data.map((item: any) => item.value);
+      const requiredTimezoneData = data.find(item => item.value === timeZone);
       
       // Extract the UTC datetime and the UTC offset from the API response
       const localDate = new Date();  // Use the UTC datetime from the API
@@ -3122,4 +3122,5 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Update every second
   setInterval(updateClocks, 1000);
 });
+
 
